@@ -50,26 +50,28 @@
             </div>
         </div>
 
-        <!-- 文章视图 - 显示单篇文章 -->
-        <div id="article-view" class="hidden-view hidden">
-            <button id="back-button" class="fixed top-4 left-4 bg-white text-gray-800 py-2 px-4 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 z-50 flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                返回列表
-            </button>
-            <div id="article-content" class="bg-white rounded-lg shadow-xl mt-16">
-                <!-- 文章内容将由JS注入 -->
-            </div>
-        </div>
-
     </div>
+
+    <!-- 文章视图 - 显示单篇文章 -->
+    <div id="article-view" class="hidden-view hidden min-h-screen overflow-y-auto">
+        <div id="article-content">
+            <!-- 文章内容将由JS注入 -->
+        </div>
+    </div>
+
+    <!-- 返回按钮 (移到外部，确保 position:fixed 生效) -->
+    <button id="back-button" class="fixed top-4 left-4 bg-white text-gray-800 py-2 px-4 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 z-50 flex items-center hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        返回列表
+    </button>
 
     <script>
         const articles = [
             {
                 id: 1,
-                title: 'Claude Code 完整开发指南',
+                title: 'Claude Code 完整开发指南 (文档版)',
                 description: '一份从入门到精通的综合实践手册，代表了 AI 辅助编程的新范式。',
                 content: `
                 <!-- 文章1的特定样式 -->
@@ -804,6 +806,7 @@ claude --dangerously-skip-permissions</code></pre><button class="copy-btn">复�
 
                     // 为显示的文章页面初始化其特定功能（如侧边栏）
                     initArticlePage();
+                    backButton.classList.remove('hidden');
                 }
             }
             
@@ -883,6 +886,7 @@ claude --dangerously-skip-permissions</code></pre><button class="copy-btn">复�
                      mainView.classList.remove('hidden-view');
                      mainView.classList.add('visible-view');
                 }, 10);
+                backButton.classList.add('hidden');
             }
 
             // 4. 添加事件监听器
@@ -902,4 +906,5 @@ claude --dangerously-skip-permissions</code></pre><button class="copy-btn">复�
     </script>
 </body>
 </html>
+
 
