@@ -1,0 +1,51 @@
+{
+  "name": "knowledge-sharing-website",
+  "version": "1.0.0",
+  "description": "Personal knowledge sharing website built with Next.js",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "gray-matter": "^4.0.3",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "remark-gfm": "^4.0.0",
+    "rehype-highlight": "^7.0.0",
+    "faunadb": "^4.8.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.294.0",
+    "jsonwebtoken": "^9.0.2",
+    "@netlify/functions": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/jsonwebtoken": "^9.0.5",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "typescript": "^5.3.3",
+    "tailwindcss": "^3.3.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "raw-loader": "^4.0.2"
+  },
+  "keywords": [
+    "nextjs",
+    "markdown",
+    "blog",
+    "knowledge-sharing",
+    "netlify"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
